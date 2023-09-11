@@ -1,11 +1,23 @@
-const express = require('express');
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+
+import ('./config/db.js')
+
+import {userRouter} from './routes/users.routes.js'
+
+dotenv.config();
+
 const app = express();
-const port = 8000;
 
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
+app.use(express.json());
+app.use(cors());
 
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+app.use("/auth", userRouter);
+
+
+const PORT = process.env.APP_PORT;
+const HOST = process.env.APP_HOST;
+app.listen(PORT, () => {
+  console.log(`Server is listening on http://${HOST}:${PORT}`);
 });
