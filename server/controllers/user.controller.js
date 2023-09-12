@@ -44,7 +44,7 @@ const connectedUser = async (req, res) => {
       .json({ message: "Username or password is incorrect" });
   }
   const token = jwt.sign({ id: user._id }, "secret");
-  res.json({ token, userID: user._id });
+  res.status(200).json({ token, userID: user._id });
 };
 
 // Get all the user info
