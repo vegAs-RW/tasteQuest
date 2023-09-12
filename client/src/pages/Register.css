@@ -1,0 +1,45 @@
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    border-bottom: 1px solid #ffae03;
+}
+
+.auth-form {
+    width: auto;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.form-group input {
+    padding: .5rem 0 .5rem 0;
+    margin : .5rem 0 .5rem 0;
+    border: none;
+    border-radius: .2rem;
+    background-color: #ffaf0384;
+}
+
+.btn {
+    background-color: #ffae03;
+    border: none;
+    padding: .5rem;
+    border-radius: .5rem;
+    box-shadow: 0px 1px 5px black;
+    margin-top: 1rem
+}
+
+.switch-login {
+    font-size: .8rem;
+}
+
+.switch-login a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
