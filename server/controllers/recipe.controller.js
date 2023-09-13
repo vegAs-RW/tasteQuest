@@ -3,8 +3,12 @@ import { RecipesModel } from "../models/recipes.model.js";
 
 // Get recipes
 const getAllRecipes = async (req, res) => {
+    const query = req.query;
   try {
-    const recipes = await RecipesModel.find();
+    const searchFilter = {
+        title:{$regex: query.search, $options: "i"}
+    }
+    const recipes = await RecipesModel.find(query.search ? searchFilter : null);
     res.status(200).json(recipes);
   } catch (err) {
     res.status(500).json(err);
@@ -87,6 +91,8 @@ const getUserRecipes = async (req, res) => {
     res.status(500).json(err);
   }
 };
+
+
 /*
 const saveRecipe = async (req, res) => {
   const recipe = await RecipesModel.findById(req.body.recipeID);
