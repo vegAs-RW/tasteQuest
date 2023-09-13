@@ -19,8 +19,8 @@ const Register = () => {
         email,
       });
       alert("Registration Completed! Now login.");
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.log(err);
     }
   };
 

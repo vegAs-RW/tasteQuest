@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
@@ -15,7 +14,6 @@ const Login = () => {
 
     try {
       const result = await axios.post("http://localhost:8000/auth/login", {
-        username,
         email,
         password,
       });
@@ -33,16 +31,6 @@ const Login = () => {
         <form onSubmit={handleSubmit} className="auth-form">
           <h2>Login</h2>
           <p>Happy to see you again !</p>
-          <div className="form-group">
-            <input
-              className="form-input"
-              type="text"
-              placeholder="Username"
-              name="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
           <div className="form-group">
             <input
               className="form-input"
