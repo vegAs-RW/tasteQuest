@@ -21,9 +21,6 @@ app.use("/auth", authRouter);
 app.use("/user", userRouter)
 app.use("/recipes", recipeRouter)
 
-
-
-
 const PORT = process.env.APP_PORT;
 const HOST = process.env.APP_HOST;
 app.listen(PORT, () => {
