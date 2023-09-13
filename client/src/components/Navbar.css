@@ -1,0 +1,103 @@
+@media screen and (max-width: 767px) {
+h1 {
+    display: inline;
+}
+
+.navbar-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    min-height: 75px;
+    background-color: #ff7f00;
+    color: #ffffff;
+}
+
+.navbar-links {
+    display: flex;
+}
+
+.navbar-link {
+    padding: 0 .3rem;
+    color: inherit
+}
+
+.navbar-burger {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    color: inherit;
+    border: none;
+    display: none;
+}
+}
+
+
+    h1 {
+        display: none;
+    }
+    .navbar-links {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        right:-100vw;
+        bottom: 0;
+        width: 0;
+        height: 100vh;
+        padding: 2rem;
+        visibility: hidden;
+        background-color: #ff7f00;
+        transition: all .8s ease-out;
+    }
+    .show-nav .navbar-links {
+        right: 0;
+        width: 100vw;
+        visibility: visible;
+    }
+    .navbar-link {
+        display: block;
+        padding: 1.5rem;
+        font-size: 5vw;
+    }
+    .navbar-burger {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+    }
+    .navbar-burger:hover {
+        cursor: pointer;
+    }
+    .burger-line, .burger-line::before, .burger-line::after{
+        display: block;
+        width: 40px;
+        height: 3px;
+        position: relative;
+        border-radius: 3px;
+        background: #ffffff;
+        transition: all .5s ease-in-out;
+    }
+    .burger-line::before, .burger-line::after {
+        content: "";
+        position: absolute;
+        left: 0;
+    }
+    .burger-line::before {
+        transform: translateY(-12px);
+    }
+    .burger-line::after {
+        transform: translateY(12px);
+    }
+    .show-nav .burger-line {
+        background: transparent;
+    }
+    .show-nav .burger-line::before {
+        transform: rotate(45deg);
+    }
+    .show-nav .burger-line::after {
+        transform: rotate(-45deg);
+    }
