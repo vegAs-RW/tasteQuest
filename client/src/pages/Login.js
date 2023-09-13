@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -27,6 +28,7 @@ const Login = () => {
 
   return (
     <>
+    <Navbar/>
       <div className="auth-container">
         <form onSubmit={handleSubmit} className="auth-form">
           <h2>Login</h2>

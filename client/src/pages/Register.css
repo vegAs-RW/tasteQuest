@@ -1,7 +1,9 @@
 .auth-container {
     display: flex;
     flex-direction: column;
+
     
+    padding: 8rem 1rem 1rem;
 }
 
 h2 {
