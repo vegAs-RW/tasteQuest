@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700');
 * {
   box-sizing: border-box;
   padding: 0;
@@ -44,7 +45,12 @@ ul {
 a {
   text-decoration: none;
 }
-
+h3 {
+  font-family: 'Amaranth', sans-serif;
+}
+p {
+  font-family: 'Philosopher', sans-serif;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
