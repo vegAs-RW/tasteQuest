@@ -1,53 +1,36 @@
 import React from "react";
-import {BiTimeFive} from 'react-icons/bi'
-import {LuChefHat} from 'react-icons/lu'
-import './HomeCards.css'
+import { BiTimeFive } from "react-icons/bi";
+import { LuChefHat } from "react-icons/lu";
+import "./HomeCards.css";
 
-
-const HomeCards = () => {
+const HomeCards = ({ recipe }) => {
   return (
-    <>
-    <div className="card-container">
-      <div className="card-img">
-        <img src="https://www.allrecipes.com/thmb/BNqpgaMRwuHhuhtdw-E4rMpJm4Y=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/11973-spaghetti-carbonara-ii-DDMFS-4x3-6edea51e421e4457ac0c3269f3be5157.jpg" alt="" className=""></img>
-      </div>
-      <div className="card-infos">
-        <div className="card-infos-title">
-          <h3 className="">Spaghetti Carbonara</h3>
+    
+      <div className="card-container">
+        <div className="card-img">
+          <img
+            src={recipe.imageUrl ? recipe.imageUrl : "null"}
+            alt={recipe.title}
+            className=""
+          ></img>
         </div>
-        <div className="card-infos-items">
+        <div className="card-infos">
+          <div className="card-infos-title">
+            <h3 className="">{recipe.title}</h3>
+          </div>
+          <div className="card-infos-items">
             <div className="card-infos-items-item">
-                <BiTimeFive />
-                <p>15 min</p>
+              <BiTimeFive />
+              <p>{recipe.cookingTime}</p>
             </div>
             <div className="card-infos-items-item">
-                <LuChefHat />
-                <p>Easy</p>
+              <LuChefHat />
+              <p>{recipe.description.slice(0, 100) + "...More"}</p>
             </div>
+          </div>
         </div>
       </div>
-    </div>
-<div className="card-container">
-<div className="card-img">
-  <img src="https://www.allrecipes.com/thmb/BNqpgaMRwuHhuhtdw-E4rMpJm4Y=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/11973-spaghetti-carbonara-ii-DDMFS-4x3-6edea51e421e4457ac0c3269f3be5157.jpg" alt="" className=""></img>
-</div>
-<div className="card-infos">
-  <div className="card-infos-title">
-    <h3 className="">Spaghetti Carbonara</h3>
-  </div>
-  <div className="card-infos-items">
-      <div className="card-infos-items-item">
-          <BiTimeFive />
-          <p>15 min</p>
-      </div>
-      <div className="card-infos-items-item">
-          <LuChefHat />
-          <p>Easy</p>
-      </div>
-  </div>
-</div>
-</div>
-</>
+
   );
 };
 
