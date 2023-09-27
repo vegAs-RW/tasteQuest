@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -17,8 +16,9 @@ const Login = () => {
       const result = await axios.post("http://localhost:8000/auth/login", {
         email,
         password,
-      });
-
+      },
+      {withCredentials: true});
+      console.log(result.headers.cookie);
       window.localStorage.setItem("userID", result.data.userID);
       navigate("/");
     } catch (err) {
@@ -28,7 +28,7 @@ const Login = () => {
 
   return (
     <>
-    <Navbar/>
+      <h1>TasteQuest</h1>
       <div className="auth-container">
         <form onSubmit={handleSubmit} className="auth-form">
           <h2>Login</h2>
@@ -61,7 +61,6 @@ const Login = () => {
           You don't have an account ? Click here !
         </p>
       </div>
-      <Footer />
     </>
   );
 };

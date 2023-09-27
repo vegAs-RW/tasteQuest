@@ -1,8 +1,8 @@
-@media (min-width: 767px) {
+
     h1 {
     display: inline;
     }
-    /*.navbar-container {
+    .navbar-container {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -12,7 +12,7 @@
         min-height: 75px;
         background-color: #ff7f00;
         color: #ffffff;
-    }*/
+    }
 
     .navbar-links {
         display: flex;
@@ -31,20 +31,8 @@
         border: none;
         display: none;
     }
-}
 
-
-.navbar-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 1rem;
-    min-height: 75px;
-    background-color: #ff7f00;
-    color: #ffffff;
-}
+@media (max-width: 767px) {
     h1 {
         display: none;
     }
@@ -111,3 +99,4 @@
     .show-nav .burger-line::after {
         transform: rotate(-45deg);
     }
+}

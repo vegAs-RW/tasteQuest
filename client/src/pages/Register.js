@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Register.css";
-import Footer from "../components/Footer";
+
+
 
 const Register = () => {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ const Register = () => {
 
   return (
     <>
+    <h1>TasteQuest</h1>
       <div className="auth-container">
         <form onSubmit={handleSubmit} className="auth-form">
           <h2>Sign Up</h2>
@@ -68,7 +70,6 @@ const Register = () => {
           You already have an account ? Click here !
         </p>
       </div>
-      <Footer />
     </>
   );
 };
