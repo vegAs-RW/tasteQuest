@@ -11,11 +11,17 @@ import { userRouter } from './routes/users.routes.js';
 
 dotenv.config();
 
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true,
+};
+
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+
 app.use(cookieParser())
+app.use(cors(corsOptions));
 
 app.use("/auth", authRouter);
 app.use("/user", userRouter)
