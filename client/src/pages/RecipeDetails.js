@@ -15,6 +15,7 @@ const RecipeDetails = () => {
   const recipeId = useParams().id;
   const [recipe, setRecipe] = useState({});
   const navigate = useNavigate();
+  
 
   const fetchRecipe = async () => {
     try {
