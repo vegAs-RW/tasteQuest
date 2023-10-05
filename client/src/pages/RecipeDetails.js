@@ -52,22 +52,25 @@ const RecipeDetails = () => {
           <h2 className="recipe-title">{recipe.title}</h2>
           <p>
             <LuChefHat />
-            {recipe.cookingTime}
+            {recipe.cookingTime}min
           </p>
+         
           <div className="recipe-item">
-            <p>
+          
+            <p onClick={()=>navigate("/edit/"+recipeId)}>
               <BiEdit />
             </p>
-            {userId===recipe.userId && 
+             {userId===recipe.userId && 
             <p onClick={handleDeleteRecipe}>
               <MdDelete />
             </p>
-            }
+           }
             
           </div>
+           
         </div>
         <img
-          src={recipe.imageUrl}
+          src={recipe.imageUrl ? `http://localhost:8000/images/${recipe.imageUrl}` : "null"}
           alt={recipe.title}
           className="recipe-img"
         ></img>
@@ -85,7 +88,6 @@ const RecipeDetails = () => {
           <p className="recipe-instruction">{recipe.instructions}</p>
         </div>
       </div>
-      <Footer/>
     </>
   );
 };
