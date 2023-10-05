@@ -5,10 +5,10 @@
   margin: 0;
   outline: none;
 }
-
+/*
 .App {
   text-align: center;
-}
+}*/
 
 .App-logo {
   height: 40vmin;
@@ -44,6 +44,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: black;
 }
 h3 {
   font-family: 'Amaranth', sans-serif;

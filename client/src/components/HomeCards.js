@@ -3,13 +3,14 @@ import { BiTimeFive } from "react-icons/bi";
 import { LuChefHat } from "react-icons/lu";
 import "./HomeCards.css";
 
+
 const HomeCards = ({ recipe }) => {
   return (
     
       <div className="card-container">
         <div className="card-img">
           <img
-            src={recipe.imageUrl ? recipe.imageUrl : "null"}
+            src={recipe.imageUrl ? `http://localhost:8000/images/${recipe.imageUrl}` : "null"}
             alt={recipe.title}
             className=""
           ></img>

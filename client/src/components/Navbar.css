@@ -32,6 +32,12 @@
         display: none;
     }
 
+    .navbar-search {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
 @media (max-width: 767px) {
     h1 {
         display: none;
