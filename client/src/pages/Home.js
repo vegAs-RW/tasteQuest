@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import HomeCards from "../components/HomeCards";
 import Navbar from "../components/Navbar";
 import HomeBackground from "../components/HomeBackground";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
   const { search } = useLocation();
   const [recipes, setRecipes] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -17,6 +18,7 @@ const Home = () => {
         , {withCredentials: true});
         setRecipes(response.data);
       } catch (err) {
+        navigate("/login")
         console.log(err);
       }
     };
