@@ -23,9 +23,14 @@ const createRecipe = async (req, res) => {
     cookingTime,
     instructions,
     ingredients,
-    imageUrl,
     userId,
   } = req.body;
+
+  if (!req.file) {
+    return res.status(400).json({message : "image is required"})
+  }
+
+  const imageUrl = req.file.filename
 
   const newRecipe = new RecipesModel({
     title,
