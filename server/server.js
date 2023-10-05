@@ -2,6 +2,10 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import { fileURLToPath } from 'url';
+import { dirname} from 'path'
+import path from 'path'
+
 import ('./config/db.js')
 
 
@@ -16,10 +20,13 @@ const corsOptions = {
   credentials: true,
 };
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
 const app = express();
 
 app.use(express.json());
-
+app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(cookieParser())
 app.use(cors(corsOptions));
 
