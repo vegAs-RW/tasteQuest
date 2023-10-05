@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useGetUserID } from "../hooks/useGetUserId";
@@ -10,12 +10,13 @@ const CreateRecipe = () => {
 
   const userID = useGetUserID();
 
+
   const [recipe, setRecipe] = useState({
     title: "",
     description: "",
     ingredients: [],
     instructions: "",
-    imageUrl: "",
+    imageUrl: null,
     cookingTime: 0,
     userId: userID,
   });
@@ -37,14 +38,32 @@ const CreateRecipe = () => {
     setRecipe({ ...recipe, ingredients });
   };
 
+  const handleImgChange = (e) => {
+    const file = e.target.files[0]
+    setRecipe({...recipe, imageUrl: file})
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("title", recipe.title);
+    formData.append("description", recipe.description);
+    formData.append("instructions", recipe.instructions);
+    formData.append("cookingTime", recipe.cookingTime);
+    formData.append("userId", recipe.userId);
+    recipe.ingredients.forEach((ingredient, index) => {
+      formData.append(`ingredients[${index}]`, ingredient);
+    });
+    formData.append("image", recipe.imageUrl);
     try {
       await axios.post(
         "http://localhost:8000/recipes/create",
-        { ...recipe },
+        formData,
         {
           withCredentials: true,
+          headers : {
+            "Content-Type": "multipart/form-data",
+          }
         }
       );
 
@@ -55,6 +74,10 @@ const CreateRecipe = () => {
     }
   };
 
+  useEffect(() => {
+    if (!userID) navigate('/login')
+
+  }, [])
   return (
     <div>
       <Navbar />
@@ -87,7 +110,7 @@ const CreateRecipe = () => {
             />
           ))}
 
-          <button type="button" onClick={handleAddIngredient}>
+          <button className="btn" type="button" onClick={handleAddIngredient}>
             Add Ingredient
           </button>
           <label htmlFor="instructions">Instructions</label>
@@ -97,13 +120,13 @@ const CreateRecipe = () => {
             value={recipe.instructions}
             onChange={handleChange}
           ></textarea>
-          <label htmlFor="imageUrl">Image URL</label>
+          <label htmlFor="imageUrl">Image</label>
           <input
-            type="text"
+            type="file"
             id="imageUrl"
             name="imageUrl"
-            value={recipe.imageUrl}
-            onChange={handleChange}
+            accept="image/*"
+            onChange={handleImgChange}
           />
           <label htmlFor="cookingTime">Cooking Time (minutes)</label>
           <input
@@ -113,7 +136,7 @@ const CreateRecipe = () => {
             value={recipe.cookingTime}
             onChange={handleChange}
           />
-          <button type="submit">Create Recipe</button>
+          <button className="btn" type="submit">Create Recipe</button>
         </form>
       </div>
     </div>
