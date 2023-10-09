@@ -1,5 +1,5 @@
 import { RecipesModel } from "../models/recipes.model.js";
-/*import { UserModel } from "../models/user.model.js";*/
+
 
 // Get recipes
 const getAllRecipes = async (req, res) => {
@@ -97,39 +97,9 @@ const getUserRecipes = async (req, res) => {
   }
 };
 
-
-/*
-const saveRecipe = async (req, res) => {
-  const recipe = await RecipesModel.findById(req.body.recipeID);
-  const user = await UserModel.findById(req.body.userID);
-
-  try {
-    user.savedRecipes.push(recipe);
-    await user.save();
-    res.status(201).json({ savedRecipes: user.savedRecipes });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-};
-
-const getSavedRecipes = async (req, res) => {
-  try {
-    const user = await UserModel.findById(req.params.id);
-    const savedRecipes = await RecipesModel.find({
-      _id: { $in: user.savedRecipes },
-    });
-    console.log(savedRecipes);
-    res.status(201).json({ savedRecipes });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-};
-*/
 export {
   getAllRecipes,
   getRecipeDetails,
-  /*getSavedRecipes,
-  saveRecipe,*/
   createRecipe,
   updateRecipe,
   deleteRecipe,
