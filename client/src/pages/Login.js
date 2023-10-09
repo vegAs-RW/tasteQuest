@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [error, setError] = useState(null);
+
 
   const navigate = useNavigate();
 
@@ -23,6 +25,7 @@ const Login = () => {
       navigate("/");
     } catch (err) {
       console.error(err);
+      setError("Username or password is incorrect.");
     }
   };
 
@@ -53,6 +56,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+          {error && <p className="error-message">{error}</p>}
           <button type="submit" className="btn">
             Login
           </button>

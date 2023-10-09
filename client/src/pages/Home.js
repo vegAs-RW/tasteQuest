@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import HomeCards from "../components/HomeCards";
 import Navbar from "../components/Navbar";
 import HomeBackground from "../components/HomeBackground";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
@@ -29,13 +29,15 @@ const Home = () => {
     <>
       <Navbar />
       <HomeBackground />
+      <div className="home">
       {recipes.map((recipe) => (
-        <>
+        <div className="card" key={recipe._id}>
         <Link to={`/recipes/${recipe._id}`}>
-          <HomeCards key={recipe._id} recipe={recipe} />
+          <HomeCards  recipe={recipe} />
         </Link>
-        </>
+        </div>
       ))}
+      </div>
     </>
   );
 };

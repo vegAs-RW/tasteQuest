@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Register.css";
-
-
+import "../style/Register.css";
 
 const Register = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,12 +21,17 @@ const Register = () => {
       alert("Registration Completed! Now login.");
     } catch (err) {
       console.log(err);
+      if (err.response && err.response.status === 409) {
+        setError("Email already exists. Please use a different email.");
+      } else {
+        setError("Error during registration.");
+      }
     }
   };
 
   return (
     <>
-    <h1>TasteQuest</h1>
+      <h1>TasteQuest</h1>
       <div className="auth-container">
         <form onSubmit={handleSubmit} className="auth-form">
           <h2>Sign Up</h2>
@@ -65,6 +69,8 @@ const Register = () => {
           <button type="submit" className="btn">
             Register
           </button>
+          {error && <p className="error-message">{error}</p>}
+
         </form>
         <p className="switch-login" onClick={() => navigate("/login")}>
           You already have an account ? Click here !

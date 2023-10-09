@@ -1,7 +1,7 @@
 import React from "react";
 import { BiTimeFive } from "react-icons/bi";
 import { LuChefHat } from "react-icons/lu";
-import "./HomeCards.css";
+import "../style/HomeCards.css";
 
 
 const HomeCards = ({ recipe }) => {
@@ -26,7 +26,7 @@ const HomeCards = ({ recipe }) => {
             </div>
             <div className="card-infos-items-item">
               <LuChefHat />
-              <p>{recipe.description.slice(0, 100) + "...More"}</p>
+              <p>{recipe.description.slice(0, 40) + "...More"}</p>
             </div>
           </div>
         </div>

@@ -3,13 +3,12 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useGetUserID } from "../hooks/useGetUserId";
 import Navbar from "../components/Navbar";
-import "./CreateRecipe.css";
+import "../style/CreateRecipe.css";
 
 const CreateRecipe = () => {
   const navigate = useNavigate();
 
   const userID = useGetUserID();
-
 
   const [recipe, setRecipe] = useState({
     title: "",
@@ -20,6 +19,7 @@ const CreateRecipe = () => {
     cookingTime: 0,
     userId: userID,
   });
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,12 +39,16 @@ const CreateRecipe = () => {
   };
 
   const handleImgChange = (e) => {
-    const file = e.target.files[0]
-    setRecipe({...recipe, imageUrl: file})
-  }
+    const file = e.target.files[0];
+    setRecipe({ ...recipe, imageUrl: file });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!recipe.imageUrl) {
+      setError("Image is required");
+      return;
+    }
     const formData = new FormData();
     formData.append("title", recipe.title);
     formData.append("description", recipe.description);
@@ -56,16 +60,12 @@ const CreateRecipe = () => {
     });
     formData.append("image", recipe.imageUrl);
     try {
-      await axios.post(
-        "http://localhost:8000/recipes/create",
-        formData,
-        {
-          withCredentials: true,
-          headers : {
-            "Content-Type": "multipart/form-data",
-          }
-        }
-      );
+      await axios.post("http://localhost:8000/recipes/create", formData, {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       alert("Recipe Created");
       navigate("/");
@@ -75,9 +75,8 @@ const CreateRecipe = () => {
   };
 
   useEffect(() => {
-    if (!userID) navigate('/login')
-
-  }, [])
+    if (!userID) navigate("/login");
+  }, []);
   return (
     <div>
       <Navbar />
@@ -128,6 +127,8 @@ const CreateRecipe = () => {
             accept="image/*"
             onChange={handleImgChange}
           />
+          {error && <p className="error-message">{error}</p>}
+
           <label htmlFor="cookingTime">Cooking Time (minutes)</label>
           <input
             type="number"
@@ -136,7 +137,9 @@ const CreateRecipe = () => {
             value={recipe.cookingTime}
             onChange={handleChange}
           />
-          <button className="btn" type="submit">Create Recipe</button>
+          <button className="btn" type="submit">
+            Create Recipe
+          </button>
         </form>
       </div>
     </div>

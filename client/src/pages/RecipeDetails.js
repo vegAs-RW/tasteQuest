@@ -1,46 +1,42 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { BiEdit } from "react-icons/bi";
+import { BiEdit, BiTimeFive } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
-import { LuChefHat } from "react-icons/lu";
 import Navbar from "../components/Navbar";
 
-import "./RecipeDetails.css";
+import "../style/RecipeDetails.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetUserID } from "../hooks/useGetUserId";
-import Footer from "../components/Footer";
 
 const RecipeDetails = () => {
-  const userId = useGetUserID()
+  const userId = useGetUserID();
   const recipeId = useParams().id;
   const [recipe, setRecipe] = useState({});
   const navigate = useNavigate();
-  
 
   const fetchRecipe = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/recipes/" + recipeId
-      ,{withCredentials: true});
-      console.log(response.data);
+        "http://localhost:8000/recipes/" + recipeId,
+        { withCredentials: true }
+      );
       setRecipe(response.data);
     } catch (err) {
       console.log(err);
     }
   };
 
-  const handleDeleteRecipe=async ()=>{
-
-    try{
-      const response = await axios.delete("http://localhost:8000/recipes/"+recipeId,{withCredentials:true})
-      console.log(response.data)
-      navigate("/")
+  const handleDeleteRecipe = async () => {
+    try {
+      await axios.delete("http://localhost:8000/recipes/" + recipeId, {
+        withCredentials: true,
+      });
+      alert("Recipe successfuly deleted");
+      navigate("/");
+    } catch (err) {
+      console.log(err);
     }
-    catch(err){
-      console.log(err)
-    }
-
-  }
+  };
   useEffect(() => {
     fetchRecipe();
   }, [recipeId]);
@@ -51,26 +47,30 @@ const RecipeDetails = () => {
         <div className="recipe-items">
           <h2 className="recipe-title">{recipe.title}</h2>
           <p>
-            <LuChefHat />
+            <BiTimeFive />
             {recipe.cookingTime}min
           </p>
-         
+
           <div className="recipe-item">
-          
-            <p onClick={()=>navigate("/edit/"+recipeId)}>
-              <BiEdit />
-            </p>
-             {userId===recipe.userId && 
-            <p onClick={handleDeleteRecipe}>
-              <MdDelete />
-            </p>
-           }
-            
+            {userId === recipe.userId && (
+              <>
+                <p onClick={() => navigate("/edit/" + recipeId)}>
+                  <BiEdit />
+                </p>
+
+                <p onClick={handleDeleteRecipe}>
+                  <MdDelete />
+                </p>
+              </>
+            )}
           </div>
-           
         </div>
         <img
-          src={recipe.imageUrl ? `http://localhost:8000/images/${recipe.imageUrl}` : "null"}
+          src={
+            recipe.imageUrl
+              ? `http://localhost:8000/images/${recipe.imageUrl}`
+              : "null"
+          }
           alt={recipe.title}
           className="recipe-img"
         ></img>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
-import "./Navbar.css";
+import "../style/Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useGetUserID } from "../hooks/useGetUserId";
 import axios from "axios";

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+import "../style/Footer.css";
 import { BsFacebook, BsInstagram, BsYoutube, BsTwitter } from "react-icons/bs";
 
 const Footer = () => {
@@ -19,15 +19,6 @@ const Footer = () => {
           For your health, avoid snacking between meals -{" "}
           <a href="http://mangerbouger.fr">mangerbouger.fr</a>
         </p>
-        <a href="#" className="link">
-          Contact
-        </a>
-        <a href="#" className="link">
-          Preference
-        </a>
-        <a href="#" className="link">
-          Legal mention
-        </a>
       </div>
       <div className="footer-copyright">
         <p>TasteQuest © 2023</p>

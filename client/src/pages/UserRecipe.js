@@ -37,13 +37,14 @@ const UserRecipe = () => {
       <Navbar />
       <h2>Your recipes</h2>
       <div className="">
-        {!noResults? (
+        {!noResults ? (
           recipes?.map((recipe) => (
-            <>
-              <Link to={userID ? `/recipes/${recipe._id}` : "/login"}>
-                <HomeCards key={recipe._id} recipe={recipe} />
-              </Link>
-            </>
+            <Link
+              to={userID ? `/recipes/${recipe._id}` : "/login"}
+              key={recipe._id}
+            >
+              <HomeCards recipe={recipe} />
+            </Link>
           ))
         ) : (
           <h3>You have no recipes</h3>

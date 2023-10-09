@@ -4,29 +4,38 @@ import { ImCross } from "react-icons/im";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetUserID } from "../hooks/useGetUserId";
-import "./EditRecipe.css";
+import "../style/EditRecipe.css";
 
 const EditRecipe = () => {
   const userID = useGetUserID();
   const recipeId = useParams().id;
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [instructions, setInstructions] = useState("");
-  const [ingredient, setIngredient] = useState("");
-  const [ingredients, setIngredients] = useState([]);
-  const [cookingTime, setCookingTime] = useState();
+  const [title, setTitle] = useState(undefined);
+  const [description, setDescription] = useState(undefined);
+  const [instructions, setInstructions] = useState(undefined);
+  const [ingredient, setIngredient] = useState(undefined);
+  const [ingredients, setIngredients] = useState(undefined);
+  const [cookingTime, setCookingTime] = useState(undefined);
 
   const fetchRecipe = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/recipes/" + recipeId, { withCredentials: true }
+        "http://localhost:8000/recipes/" + recipeId,
+        { withCredentials: true }
       );
-      setTitle(response.data.title);
-      setDescription(response.data.description);
-      setIngredients(response.data.ingredients);
-      setInstructions(response.data.instructions);
-      setCookingTime(response.data.cookingTime);
+      setTitle(title !== undefined ? title : response.data.title);
+      setDescription(
+        description !== undefined ? description : response.data.description
+      );
+      setIngredients(
+        ingredients !== undefined ? ingredients : response.data.ingredients
+      );
+      setInstructions(
+        instructions !== undefined ? instructions : response.data.instructions
+      );
+      setCookingTime(
+        cookingTime !== undefined ? cookingTime : response.data.cookingTime
+      );
     } catch (err) {
       console.log(err);
     }
@@ -59,18 +68,17 @@ const EditRecipe = () => {
   }, [recipeId]);
 
   const deleteIngredient = (i) => {
-    let updatedIngredient = ingredients.filter((_, index) => index != i);
+    let updatedIngredient = ingredients.filter((_, index) => index !== i);
     setIngredients(updatedIngredient);
   };
 
   const addIngredient = () => {
     if (ingredient.trim() !== "") {
-         let updatedIngredient = [...ingredients];
-    updatedIngredient.push(ingredient);
-    setIngredient("");
-    setIngredients(updatedIngredient);
+      let updatedIngredient = [...ingredients];
+      updatedIngredient.push(ingredient);
+      setIngredient("");
+      setIngredients(updatedIngredient);
     }
-   
   };
   return (
     <div>
@@ -96,6 +104,7 @@ const EditRecipe = () => {
           <label htmlFor="ingredients">Ingredients</label>
           <input
             type="text"
+            id="ingredients"
             name="ingredients"
             value={ingredient}
             onChange={(e) => setIngredient(e.target.value)}
@@ -107,7 +116,12 @@ const EditRecipe = () => {
             {ingredients?.map((ingredient, i) => (
               <div key={i} className="ingredients-list-item">
                 <p>{ingredient}</p>
-                <p className="delete-button" onClick={() => deleteIngredient(i)}><ImCross/></p>
+                <p
+                  className="delete-button"
+                  onClick={() => deleteIngredient(i)}
+                >
+                  <ImCross />
+                </p>
               </div>
             ))}
           </div>
@@ -127,7 +141,9 @@ const EditRecipe = () => {
             value={cookingTime}
             onChange={(e) => setCookingTime(e.target.value)}
           />
-          <button className="btn" onClick={handleUpdate}>Update Recipe</button>
+          <button className="btn" onClick={handleUpdate}>
+            Update Recipe
+          </button>
         </form>
       </div>
     </div>

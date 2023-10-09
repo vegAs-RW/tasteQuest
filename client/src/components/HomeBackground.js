@@ -1,6 +1,6 @@
 import React from 'react';
 import background from '../asset/Home-page_background.jpeg'
-import './HomeBackground.css'
+import '../style/HomeBackground.css'
 
 const HomeBackground = () => {
     return (
