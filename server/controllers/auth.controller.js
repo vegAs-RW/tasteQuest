@@ -6,9 +6,9 @@ import { UserModel } from "../models/user.model.js";
 const createUser = async (req, res) => {
   try {
     const { username, email, password } = req.body;
-    const user = await UserModel.findOne({ username, email });
+    const user = await UserModel.findOne({ email });
     if (user) {
-      return res.status(400).json({ message: "User already exists" });
+      return res.status(409).json({ message: "User already exists" });
     }
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new UserModel({
