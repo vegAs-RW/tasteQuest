@@ -1,0 +1,12 @@
+.create-recipe-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+}
+
+.create-recipe-form {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 1rem 0;
+}
