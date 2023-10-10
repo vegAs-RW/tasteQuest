@@ -22,7 +22,7 @@ const HomeCards = ({ recipe }) => {
           <div className="card-infos-items">
             <div className="card-infos-items-item">
               <BiTimeFive />
-              <p>{recipe.cookingTime}</p>
+              <p>{recipe.cookingTime}min</p>
             </div>
             <div className="card-infos-items-item">
               <LuChefHat />

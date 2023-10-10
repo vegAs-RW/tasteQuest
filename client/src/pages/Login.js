@@ -20,7 +20,6 @@ const Login = () => {
         password,
       },
       {withCredentials: true});
-      console.log(result.headers.cookie);
       window.localStorage.setItem("userID", result.data.userID);
       navigate("/");
     } catch (err) {

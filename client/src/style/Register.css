@@ -3,6 +3,7 @@
     flex-direction: column;
    /* padding: 8rem 1rem 1rem;*/
    margin-bottom: 1rem;
+   text-align: center;
 }
 
 h1 {
@@ -50,4 +51,8 @@ h2 {
     text-decoration: none;
     color: black;
     cursor: pointer;
+}
+
+.error-message {
+    color: red;
 }
