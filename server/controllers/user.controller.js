@@ -33,8 +33,8 @@ const deleteUser = async (req, res) => {
 const getUser = async (req, res) => {
   try {
     const user = await UserModel.findById(req.params.id)
-    const {password,...info} = user._doc
-    res.status(200).json(info)
+    const {password, isAdmin, ...info} = user._doc
+    res.status(200).json({...info, isAdmin})
   } catch (err) {
     res.status(500).json(err)
   }

@@ -5,7 +5,7 @@ import { UserModel } from "../models/user.model.js";
 // Create a user when is register
 const createUser = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { username, email, password, isAdmin } = req.body;
     const user = await UserModel.findOne({ email });
     if (user) {
       return res.status(409).json({ message: "User already exists" });
@@ -15,6 +15,7 @@ const createUser = async (req, res) => {
       username,
       password: hashedPassword,
       email,
+      isAdmin
     });
     await newUser.save();
     res.status(200).json({ message: "User registered successfully", newUser });
