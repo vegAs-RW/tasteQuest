@@ -12,6 +12,7 @@ const RecipeDetails = () => {
   const userId = useGetUserID();
   const recipeId = useParams().id;
   const [recipe, setRecipe] = useState({});
+  const [user, setUser] = useState({});
   const navigate = useNavigate();
 
   const fetchRecipe = async () => {
@@ -21,6 +22,17 @@ const RecipeDetails = () => {
         { withCredentials: true }
       );
       setRecipe(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const fetchUser = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/user/" + userId, {
+        withCredentials: true,
+      });
+      setUser(response.data);
     } catch (err) {
       console.log(err);
     }
@@ -39,6 +51,7 @@ const RecipeDetails = () => {
   };
   useEffect(() => {
     fetchRecipe();
+    fetchUser();
   }, [recipeId]);
   return (
     <>
@@ -50,20 +63,17 @@ const RecipeDetails = () => {
             <BiTimeFive />
             {recipe.cookingTime}min
           </p>
+          {(userId === recipe.userId || (user && user.isAdmin)) && (
+            <div className="recipe-item">
+              <p onClick={() => navigate("/edit/" + recipeId)}>
+                <BiEdit />
+              </p>
 
-          <div className="recipe-item">
-            {userId === recipe.userId && (
-              <>
-                <p onClick={() => navigate("/edit/" + recipeId)}>
-                  <BiEdit />
-                </p>
-
-                <p onClick={handleDeleteRecipe}>
-                  <MdDelete />
-                </p>
-              </>
-            )}
-          </div>
+              <p onClick={handleDeleteRecipe}>
+                <MdDelete />
+              </p>
+            </div>
+          )}
         </div>
         <img
           src={

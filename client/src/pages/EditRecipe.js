@@ -49,7 +49,7 @@ const EditRecipe = () => {
       ingredients,
       instructions,
       cookingTime,
-      userId: userID,
+      /*userId: userID,*/
     };
     try {
       const response = await axios.put(
