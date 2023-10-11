@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "65016f184cc9c4635f15abcf"
+  },
+  "username": "Jean",
+  "email": "jean@jean.fr",
+  "password": "$2b$10$T.H8OMuw1ZRCaK.oCaAtSuQW/InkY5fCtCvwAnhucamTG5ocB9s1y",
+  "allRecipes": [],
+  "savedRecipes": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65018333c880dcf22a5923c7"
+  },
+  "username": "charle",
+  "email": "charle@charle.fr",
+  "password": "$2b$10$rX6bzR55G7Cf8ZorVQalK.73nQDf6D7Zh26v8PwS3ANUJq7inU936",
+  "allRecipes": [],
+  "savedRecipes": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6525076089d06d3953078957"
+  },
+  "username": "admin",
+  "email": "admin@admin.fr",
+  "password": "$2b$10$R5hLYxz1eTLNFGhKK0mUSOV4pvOL2R2UztbGTYH3SV5gXBg8xq806",
+  "isAdmin": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "652507a389d06d395307895a"
+  },
+  "username": "jack",
+  "email": "jack@jack.fr",
+  "password": "$2b$10$ndZgRb.xIkYxgmJX1gbFcu47W95/67P9LFHhEbYm0DqbwGx3EcSOC",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "652517a0180188ee7fae8373"
+  },
+  "username": "test",
+  "email": "test@test.fr",
+  "password": "$2b$10$dSg1UyxRNtz5cryL2KEs5.T4bqeV3rhlN2JeX/d8leLlHsxP1.DXC",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "652537c7180188ee7fae8397"
+  },
+  "username": "louis",
+  "email": "louis@louis.fr",
+  "password": "$2b$10$NSQULSitKMMddfMT9.RuUOf5wLvTP4NWeT7OfX0PYDJtQxMrgju2S",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "652650e8180188ee7fae83a7"
+  },
+  "username": "luc",
+  "email": "luc@luc.fr",
+  "password": "$2b$10$.Cq/f8fr9Sf1sjSEnJiNdO/kGme3nvBMdI0stF2R1pbbgL3BfNj22",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65266c01180188ee7fae8468"
+  },
+  "username": "testeur",
+  "email": "testeur@testeur.fr",
+  "password": "$2b$10$ojsgljd5iAG.ofj6XO3NL.Pjx4.X5GZ7m2u0WQMubKD.8GgozAt9G",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6526891b180188ee7fae84a9"
+  },
+  "username": "jordan",
+  "email": "jordan@jordan.fr",
+  "password": "$2b$10$pMveFNUO7UeVf5Mq81xfkeKYbHksNkE0tT6YwKl3QVLyY0L383Nma",
+  "isAdmin": false,
+  "__v": 0
+}]

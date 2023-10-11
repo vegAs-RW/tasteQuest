@@ -1,0 +1,213 @@
+[{
+  "_id": {
+    "$oid": "651e77f4b9406efbe6610f23"
+  },
+  "title": "Pates a la sauce tomate",
+  "description": "Un grand classique italien pas très compliqué",
+  "cookingTime": 20,
+  "instructions": "1. Cuire les pates dans un grand volume d'eau comme indiqué sur le paquet\r\n2. Dans une poêle, faites revenir l'échalote dans un peu d'huile à feu doux. Ajoutez ensuite la tomate, la gousse d'ail hachée. Laissez réduire la sauce tomates et ajoutez ensuite le basilic et assaisonnez la préparation.\r\n3. Versez ensuite les pâtes dans la sauce et servez le tout bien chaud.",
+  "ingredients": [
+    "300g de pates",
+    "1 filet d'huile d'olive",
+    "Basilic frais",
+    "Poivre",
+    "Sel",
+    "250g de tomates fraiches",
+    "1 gousse d'ail",
+    "1 echalotte",
+    "1 oignon"
+  ],
+  "imageUrl": "pate-sauce-tomate.webp1696495604196.undefined",
+  "userId": "6525076089d06d3953078957",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1696495604199"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1697014114109"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "651e9a3bc59b402c033ec7f9"
+  },
+  "title": "Pasta Carbonarra ",
+  "description": "A classic Italian dish made with pasta and a hearty meat sauce.",
+  "cookingTime": 28,
+  "instructions": "1. Cook spaghetti according to package directions. 2. In a large skillet, cook beef over medium heat until no longer pink; drain. 3. Add onion and garlic to the skillet and cook until tender. 4. Stir in the crushed tomatoes, tomato paste, water, sugar, basil, fennel seed, Italian seasoning, salt, and pepper. 5. Bring to a boil, then reduce heat and simmer for 30 minutes. 6. Serve sauce over spaghetti.",
+  "ingredients": [
+    "1 tablespoon of salt",
+    "pates",
+    "cream",
+    "pepper"
+  ],
+  "imageUrl": "carbonara-e1521461363147-690x388.jpeg1696504379323.jpg",
+  "userId": "65016f184cc9c4635f15abcf",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1696504379325"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1696929579450"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65250ce6180188ee7fae82c9"
+  },
+  "title": "Lasagne à la bolognaise",
+  "description": "Un plat de cantina italienne. Réconfortant pour les petits et les grands",
+  "cookingTime": 45,
+  "instructions": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"",
+  "ingredients": [
+    "1 paquet de lasagnes",
+    "3 oignons jaunes",
+    "1 carotte",
+    "800g de purée de tomate",
+    "70g de fromage rapé",
+    "sel ",
+    "Poivre",
+    "100g de farine",
+    "125g beurre",
+    "2 gousses ail"
+  ],
+  "imageUrl": "shutterstock_142426168.jpeg1696926950225.jpg",
+  "userId": "6525076089d06d3953078957",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1696926950229"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1697014332801"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6525193d180188ee7fae8386"
+  },
+  "title": "French fries fr",
+  "description": "An iconic recipe of french fries",
+  "cookingTime": 20,
+  "instructions": "1. Peel the potatoes and cut them\r\n2. Cook the potatoes in oil at 140 degrees\r\n3. Rest for 5 min\r\n4. Cook one more time the potatoes in oil at 180 degrees",
+  "ingredients": [
+    "2 potatoes",
+    "3 cup of vegetal oil",
+    "Salt",
+    "sel"
+  ],
+  "imageUrl": "frites.jpeg1696930109009.jpg",
+  "userId": "652517a0180188ee7fae8373",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1696930109011"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1697017037732"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65265726180188ee7fae83c0"
+  },
+  "title": "Boeuf Bourguignon",
+  "description": "Découvrez cette recette de bœuf bourguignon traditionnel, facile à préparer en cocotte. Celle-ci est très simple, et reste pour moi la meilleure, avec les carottes, les oignons, les lardons et champignons ayant baigné dans le vin rouge.",
+  "cookingTime": 120,
+  "instructions": "1. Tailler le bœuf en cubes de 3 à 4 cm de côte. Peler les oignons sans les écorcher. Peler et couper les carottes en rondelles pas trop fines (2mm au minimum). Peler l'ail et enlever le germe.\r\n2. Dans une grande cocotte, faire fondre le beurre. Ajouter les oignons entiers et les lardons. Faire revenir en remuant constamment. Lorsqu'ils sont dorés, les retirer avec un écumoire, et réserver.\r\n3. Dans la même cocotte, faire revenir les morceaux de viande à feu vif. Ajouter les carottes, et faire revenir encore 5 mn.\r\n4. Lorsque la viande est bien dorée, saupoudrer de farine (60g) et laisser roussir en remuant toujours\r\n5. Verser le bouillon (que vous aurez préparé en faisant fondre les 2 cubes de bouillon de viande dans 50 cl d'eau bouillante). Bien gratter les sucs. Remettre les lardons et les oignons dans la cocotte. Verser le vin rouge. Saler, poivrer et ajouter le bouquet garni et les gousses d'ail écrasées. Porter à ébullition. Couvrir et laisser mijoter doucement pendant 3 heures (petits bouillons).\r\n6. Au bout de ce temps, ajouter les champignons émincés, et mettre à cuire encore une demi-heure. Retirer le bouquet garni et verser dans un plat Servir avec des pâtes (tagliatelles par exemple), ou des pommes de terre vapeur (la sauce doit être liée, mais non épaisse. Sinon, rajouter un peu d'eau).",
+  "ingredients": [
+    "1.5kg de Boeuf",
+    "60g Beurre",
+    "2 Carottes",
+    "60g de Farine",
+    "2 cubes de bouillon de boeuf",
+    "200g Lardons",
+    "10 petits oignons",
+    "ail",
+    "250g Champignons",
+    "50cl Vin rouge",
+    "sel",
+    "poivre"
+  ],
+  "imageUrl": "bourguignon.jpeg1697011494087.jpg",
+  "userId": "652650e8180188ee7fae83a7",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1697011494089"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1697011494089"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65265bb8180188ee7fae83d0"
+  },
+  "title": "Tiramisu",
+  "description": "Il existe de nombreuses recettes de tiramisu. Celle-ci est la recette originale (ou en tous les cas, l'une des recettes pouvant prétendre l'être!).",
+  "cookingTime": 15,
+  "instructions": "1. Séparer les blancs des jaunes d'oeufs\r\n2. Mélanger les jaunes avec le sucre roux et le sucre vanillé.\r\n3. Ajouter le mascarpone au fouet.\r\n4. Monter les blancs en neige et les incorporer délicatement à la spatule au mélange précédent. Réserver.\r\n5. Mouiller les biscuits dans le café rapidement avant d'en tapisser le fond du plat.\r\n6. Recouvrir d'une couche de crème au mascarpone puis répéter l'opération en alternant couche de biscuits et couche de crème en terminant par cette dernière.\r\n7. Saupoudrer de cacao.\r\n8. Mettre au réfrigérateur 4 heures minimum puis déguster frais.",
+  "ingredients": [
+    "100g Sucre roux",
+    "1 sachet sucre vanillé",
+    "24 biscuit à la cuillère",
+    "30g cacao amer",
+    "3 oeufs",
+    "250g Mascarpone",
+    "50cl Café"
+  ],
+  "imageUrl": "tiramisu.jpeg1697012664611.jpg",
+  "userId": "652650e8180188ee7fae83a7",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1697012664612"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1697012664612"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65265e03180188ee7fae83e2"
+  },
+  "title": "Gateau au chocolat",
+  "description": "Un delicieux gateau au chocolat fondant et super rapide a préparer.",
+  "cookingTime": 15,
+  "instructions": "1. Préchauffez votre four à 180°C (thermostat 6). Dans une casserole, faites fondre le chocolat et le beurre coupé en morceaux à feu très doux.\r\n2. Dans un saladier, ajoutez le sucre, les oeufs, la farine. Mélangez.\r\n3. Ajoutez le mélange chocolat/beurre. Mélangez bien.\r\n4. Beurrez à l'aide d'une feuille de papier essuie-tout et farinez votre moule puis y versez la pâte à gâteau.\r\n5. Faites cuire au four environ 20 minutes.",
+  "ingredients": [
+    "200g chocolat noir patissier",
+    "100g de beurre",
+    "50g de farine",
+    "100g sucre en poudre",
+    "3 oeufs"
+  ],
+  "imageUrl": "gateau-choc.webp1697013251283.undefined",
+  "userId": "652650e8180188ee7fae83a7",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1697013251287"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1697013251287"
+    }
+  },
+  "__v": 0
+}]
