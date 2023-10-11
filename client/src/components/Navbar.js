@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar-container ${showLinks ? "show-nav" : "hide-nav"}`}>
       <div className="navbar-search">
-        <BsSearch onClick={() =>navigate(search?"?search="+search:navigate("/"))} className="navbar-search-icon" />
+        <p className="navbar-search-icon"><BsSearch onClick={() =>navigate(search?"?search="+search:navigate("/"))} className="navbar-search-icon" /></p>
         <input
           className="navbar-search-input"
           placeholder="Search"

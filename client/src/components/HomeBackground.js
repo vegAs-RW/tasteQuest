@@ -9,7 +9,7 @@ const HomeBackground = () => {
                 <img src={background} alt='Home background'></img>
             </div>
             <div className='background-title'>
-                <h2>Home</h2>
+                <h1>Home</h1>
             </div>
             
         </div>

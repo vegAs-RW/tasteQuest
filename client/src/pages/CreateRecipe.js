@@ -7,9 +7,9 @@ import "../style/CreateRecipe.css";
 
 const CreateRecipe = () => {
   const navigate = useNavigate();
-// Hook perso pour recupere le userID
+  // Hook perso pour recupere le userID
   const userID = useGetUserID();
-// State pour stocker les valeurs des inputs du formulaire
+  // State pour stocker les valeurs des inputs du formulaire
   const [recipe, setRecipe] = useState({
     title: "",
     description: "",

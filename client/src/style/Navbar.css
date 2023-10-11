@@ -38,6 +38,14 @@
         align-items: center;
     }
 
+    .navbar-search input{
+        margin-right: 1rem;
+    }
+
+    .navbar-search-icon {
+       font-size: 20px;
+    }
+
 @media (max-width: 767px) {
     h1 {
         display: none;
