@@ -4,6 +4,7 @@ import HomeCards from "../components/HomeCards";
 import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import { useGetUserID } from "../hooks/useGetUserId";
+import "../style/UserRecipe.css";
 
 const UserRecipe = () => {
   const { search } = useLocation();
@@ -35,16 +36,17 @@ const UserRecipe = () => {
   return (
     <div>
       <Navbar />
+
       <h2>Your recipes</h2>
-      <div className="">
+
+      <div className="user-recipe-container">
         {!noResults ? (
           recipes?.map((recipe) => (
-            <Link
-              to={userID ? `/recipes/${recipe._id}` : "/login"}
-              key={recipe._id}
-            >
-              <HomeCards recipe={recipe} />
-            </Link>
+            <div className="card" key={recipe._id}>
+              <Link to={userID ? `/recipes/${recipe._id}` : "/login"}>
+                <HomeCards recipe={recipe} />
+              </Link>
+            </div>
           ))
         ) : (
           <h3>You have no recipes</h3>

@@ -75,6 +75,7 @@ const RecipeDetails = () => {
             </div>
           )}
         </div>
+        <div className="recipe-img">
         <img
           src={
             recipe.imageUrl
@@ -84,6 +85,7 @@ const RecipeDetails = () => {
           alt={recipe.title}
           className="recipe-img"
         ></img>
+        </div>
         <p className="recipe-description">{recipe.description}</p>
         <div className="recipe-ingredients">
           <h4>Ingredients</h4>

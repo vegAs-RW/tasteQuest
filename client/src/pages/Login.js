@@ -30,7 +30,6 @@ const Login = () => {
 
   return (
     <>
-      <h1>TasteQuest</h1>
       <div className="auth-container">
         <form onSubmit={handleSubmit} className="auth-form">
           <h2>Login</h2>

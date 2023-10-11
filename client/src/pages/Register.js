@@ -19,6 +19,7 @@ const Register = () => {
         email,
       });
       alert("Registration Completed! Now login.");
+      navigate('/login')
     } catch (err) {
       console.log(err);
       if (err.response && err.response.status === 409) {
@@ -31,7 +32,6 @@ const Register = () => {
 
   return (
     <>
-      <h1>TasteQuest</h1>
       <div className="auth-container">
         <form onSubmit={handleSubmit} className="auth-form">
           <h2>Sign Up</h2>

@@ -23,7 +23,7 @@ const Navbar = () => {
       // Effacez le localStorage
       localStorage.clear();
 
-      // Redirigez l'utilisateur vers la page de connexion ou une autre page appropriée après la déconnexion
+      // Redirigez l'utilisateur vers la page de connexion après la déconnexion
       navigate("/login");
     } catch (error) {
       console.error(error);
@@ -41,7 +41,6 @@ const Navbar = () => {
           onChange={(e) => setSearch(e.target.value)}
         ></input>
       </div>
-      <h1 className="navbar-title">TasteQuest</h1>
       <ul className="navbar-links">
         <li className="navbar-item">
           <Link to="/" className="navbar-link">

@@ -73,7 +73,7 @@ const EditRecipe = () => {
   };
 
   const addIngredient = () => {
-    if (ingredient.trim() !== "") {
+    if (ingredient && ingredient.trim() !== "") {
       let updatedIngredient = [...ingredients];
       updatedIngredient.push(ingredient);
       setIngredient("");
@@ -84,7 +84,7 @@ const EditRecipe = () => {
     <div>
       <Navbar />
       <div className="edit-recipe-container">
-        <h1 className="edit-title"> Update you're recipe</h1>
+        <h2 className="edit-title"> Update you're recipe</h2>
         <form className="edit-recipe-form">
           <label htmlFor="title">Title</label>
           <input
