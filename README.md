@@ -31,6 +31,11 @@ INSTALLATION :
 Backend :
  --> Cloner le repository
  --> A partir du dossier backend, executer un npm install pour installer les dépendances
+ --> créer un fichier .env 
+      --> APP_PORT = 8000
+          APP_HOST = "localhost"
+          MONGODB_URL = "mongodb+srv://jordan:Tastepassword123@tastequest.mtighkx.mongodb.net/?retryWrites=true&w=majority"
+          SECRET_KEY = "secretToken"
  --> Executer nodemon server
      --> Le serveur doit tourner sur localhost au port 8000
      
