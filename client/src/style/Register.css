@@ -45,13 +45,13 @@ h2 {
 
 .switch-login {
     font-size: .8rem;
-}
-
-.switch-login a {
-    text-decoration: none;
-    color: black;
     cursor: pointer;
 }
+
+.switch-login:hover {
+    text-decoration: underline;
+}
+
 
 .error-message {
     color: red;
