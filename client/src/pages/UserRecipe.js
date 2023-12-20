@@ -38,7 +38,7 @@ const UserRecipe = () => {
       <Navbar />
       <section>
         <header>
-          <h2>Your recipes</h2>
+          <h1>Your recipes</h1>
         </header>
         <div className="user-recipe-container">
           {!noResults ? (

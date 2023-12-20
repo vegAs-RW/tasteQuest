@@ -86,7 +86,7 @@ const CreateRecipe = () => {
       <Navbar />
       <section className="create-recipe-container">
         <header>
-        <h2 className="create-recipe-title">Share you're recipe</h2>
+        <h1 className="create-recipe-title">Share you're recipe</h1>
         </header>
         <form className="create-recipe-form" onSubmit={handleSubmit}>
           <label htmlFor="title">Title</label>

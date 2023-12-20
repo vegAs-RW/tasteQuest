@@ -84,7 +84,7 @@ const EditRecipe = () => {
     <section>
       <Navbar />
       <div className="edit-recipe-container">
-        <h2 className="edit-title"> Update you're recipe</h2>
+        <h1 className="edit-title"> Update you're recipe</h1>
         <form className="edit-recipe-form">
           <label htmlFor="title">Title</label>
           <input

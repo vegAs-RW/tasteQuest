@@ -58,7 +58,7 @@ const RecipeDetails = () => {
       <Navbar />
       <article className="recipe-container">
         <div className="recipe-items">
-          <h2 className="recipe-title">{recipe.title}</h2>
+          <h1 className="recipe-title">{recipe.title}</h1>
           <p>
             <BiTimeFive />
             {recipe.cookingTime}min
