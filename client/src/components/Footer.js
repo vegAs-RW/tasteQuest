@@ -4,7 +4,7 @@ import { BsFacebook, BsInstagram, BsYoutube, BsTwitter } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <footer className="footer-container">
       <div className="footer-social">
         <p>For more tasty ideas follow us !</p>
         <div className="footer-social-icons">
@@ -23,7 +23,7 @@ const Footer = () => {
       <div className="footer-copyright">
         <p>TasteQuest © 2023</p>
       </div>
-    </div>
+    </footer>
   );
 };
 

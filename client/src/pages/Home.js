@@ -29,6 +29,7 @@ const Home = () => {
     <>
       <Navbar />
       <HomeBackground />
+      <main>
       <div className="home">
       {recipes.map((recipe) => (
         <div className="card" key={recipe._id}>
@@ -38,6 +39,7 @@ const Home = () => {
         </div>
       ))}
       </div>
+      </main>
     </>
   );
 };

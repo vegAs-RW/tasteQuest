@@ -27,9 +27,13 @@ const CreateRecipe = () => {
   };
 
   const handleIngredientChange = (e, i) => {
+    // Extrait la valeur de l'event
     const { value } = e.target;
+    // créer une copie de la liste d'ingredients à partir du state
     const ingredients = [...recipe.ingredients];
+    // Met a jour la copie a l'indice "i"
     ingredients[i] = value;
+    // Met à jour le state
     setRecipe({ ...recipe, ingredients });
   };
 
@@ -80,8 +84,10 @@ const CreateRecipe = () => {
   return (
     <div>
       <Navbar />
-      <div className="create-recipe-container">
+      <section className="create-recipe-container">
+        <header>
         <h2 className="create-recipe-title">Share you're recipe</h2>
+        </header>
         <form className="create-recipe-form" onSubmit={handleSubmit}>
           <label htmlFor="title">Title</label>
           <input
@@ -141,7 +147,7 @@ const CreateRecipe = () => {
             Create Recipe
           </button>
         </form>
-      </div>
+      </section>
     </div>
   );
 };

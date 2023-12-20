@@ -7,7 +7,7 @@ import "../style/HomeCards.css";
 const HomeCards = ({ recipe }) => {
   return (
     
-      <div className="card-container">
+      <article className="card-container">
         <div className="card-img">
           <img
             src={recipe.imageUrl ? `http://localhost:8000/images/${recipe.imageUrl}` : "null"}
@@ -29,7 +29,7 @@ const HomeCards = ({ recipe }) => {
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
   );
 };

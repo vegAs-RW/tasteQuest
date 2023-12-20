@@ -56,7 +56,7 @@ const RecipeDetails = () => {
   return (
     <>
       <Navbar />
-      <div className="recipe-container">
+      <article className="recipe-container">
         <div className="recipe-items">
           <h2 className="recipe-title">{recipe.title}</h2>
           <p>
@@ -99,7 +99,7 @@ const RecipeDetails = () => {
           <h4>Instructions</h4>
           <p className="recipe-instruction">{recipe.instructions}</p>
         </div>
-      </div>
+      </article>
     </>
   );
 };

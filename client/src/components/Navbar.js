@@ -31,6 +31,7 @@ const Navbar = () => {
   };
 
   return (
+    <header>
     <nav className={`navbar-container ${showLinks ? "show-nav" : "hide-nav"}`}>
       <div className="navbar-search">
         <p className="navbar-search-icon"><BsSearch onClick={() =>navigate(search?"?search="+search:navigate("/"))} className="navbar-search-icon" /></p>
@@ -67,6 +68,7 @@ const Navbar = () => {
         <span className="burger-line"></span>
       </button>
     </nav>
+    </header>
   );
 };
 

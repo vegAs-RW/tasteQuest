@@ -34,25 +34,27 @@ const UserRecipe = () => {
   }, [search]);
 
   return (
-    <div>
+    <>
       <Navbar />
-
-      <h2>Your recipes</h2>
-
-      <div className="user-recipe-container">
-        {!noResults ? (
-          recipes?.map((recipe) => (
-            <div className="card" key={recipe._id}>
-              <Link to={userID ? `/recipes/${recipe._id}` : "/login"}>
-                <HomeCards recipe={recipe} />
-              </Link>
-            </div>
-          ))
-        ) : (
-          <h3>You have no recipes</h3>
-        )}
-      </div>
-    </div>
+      <section>
+        <header>
+          <h2>Your recipes</h2>
+        </header>
+        <div className="user-recipe-container">
+          {!noResults ? (
+            recipes?.map((recipe) => (
+              <div className="card" key={recipe._id}>
+                <Link to={userID ? `/recipes/${recipe._id}` : "/login"}>
+                  <HomeCards recipe={recipe} />
+                </Link>
+              </div>
+            ))
+          ) : (
+            <h3>You have no recipes</h3>
+          )}
+        </div>
+      </section>
+    </>
   );
 };
 
