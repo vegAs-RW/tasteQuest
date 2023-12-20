@@ -32,11 +32,11 @@ const Home = () => {
       <main>
       <div className="home">
       {recipes.map((recipe) => (
-        <div className="card" key={recipe._id}>
+        <article className="card" key={recipe._id}>
         <Link to={`/recipes/${recipe._id}`}>
           <HomeCards  recipe={recipe} />
         </Link>
-        </div>
+        </article>
       ))}
       </div>
       </main>
